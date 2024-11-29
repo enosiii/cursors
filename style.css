@@ -3,6 +3,9 @@ body {
     text-align: center;
     padding: 20px;
     transition: cursor 0.3s ease;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100px; /* Adjust size as needed */
 }
 
 .container {
@@ -17,4 +20,15 @@ button {
 
 select {
     padding: 5px;
+}
+
+/* Optional: Style buttons and dropdowns */
+button:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+select:focus {
+    outline: none;
+    border: 2px solid #007BFF;
 }
