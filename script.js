@@ -2,20 +2,25 @@
 const cursorSelect = document.getElementById('cursorSelect');
 const applyBtn = document.getElementById('applyBtn');
 
-// Function to change the cursor based on selection
-function changeCursor(cursorId) {
-    const cursorFile = cursorId + '_pointer.cur';  // Get the pointer file
-    const cursorPath = `pointer/${cursorFile}`;
-    document.body.style.cursor = `url(${cursorPath}), auto`;
+// Function to change both pointer and cursor
+function changePointerAndCursor(styleId) {
+    const pointerImage = `assets/cursors/${styleId}_cursor.png`; // Pointer image
+    const cursorImage = `assets/cursors/${styleId}_pointer.gif`;  // Cursor image
+    
+    // Update cursor style
+    document.body.style.cursor = `url(${cursorImage}), auto`;
+
+    // Update background to show the pointer style (for visual purposes)
+    document.body.style.backgroundImage = `url(${pointerImage})`;
 }
 
-// Apply the cursor change when the button is clicked
+// Apply the change when the button is clicked
 applyBtn.addEventListener('click', () => {
-    const selectedCursor = cursorSelect.value;
-    changeCursor(selectedCursor);
+    const selectedStyle = cursorSelect.value;
+    changePointerAndCursor(selectedStyle);
 });
 
-// Set default cursor on page load (cursor 1)
+// Set default cursor and pointer on page load (style 1)
 window.onload = () => {
-    changeCursor(1);
+    changePointerAndCursor(1);
 };
