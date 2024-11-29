@@ -4,8 +4,8 @@ const applyBtn = document.getElementById('applyBtn');
 
 // Function to change the cursor based on selection
 function changeCursor(cursorId) {
-    const cursorFile = cursorId + '_pointer.ani';  // Get the pointer file
-    const cursorPath = `cursor/${cursorFile}`;
+    const cursorFile = cursorId + '_pointer.cur';  // Get the pointer file
+    const cursorPath = `pointer/${cursorFile}`;
     document.body.style.cursor = `url(${cursorPath}), auto`;
 }
 
